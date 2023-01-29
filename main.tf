@@ -27,7 +27,7 @@ data "digitalocean_ssh_key" "ssh_key" {
 
 resource "digitalocean_kubernetes_cluster" "k8s" {
   name    = "k8s"
-  region  = "nyc1"
+  region  = var.region
   version = "1.25.4-do.0"
 
   node_pool {
@@ -50,10 +50,10 @@ variable "region" {
 }
 
 output "jenkins_ip" {
-    value = digitalocean_droplet.jenkins.ipv4_address  
+  value = digitalocean_droplet.jenkins.ipv4_address
 }
 
-resource "local_file" "kube_config" {
+resource "local_file" "kubeconfig" {
   content  = digitalocean_kubernetes_cluster.k8s.kube_config.0.raw_config
-  filename = "kube_config.yml"
+  filename = "kubeconfig.yml"
 }
