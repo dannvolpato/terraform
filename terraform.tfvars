@@ -1,3 +1,3 @@
-token        = "dop_v1_1187edf42b5f35d73046b086ac55be3e7061fca6856f009142abf036967a6ac7"
+token        = "dop_v1_662e5ac8ca869b744bb1914fe328bb5314e1973c1c45de01a72b31f15683a739"
 ssh_key_name = "digital_ocean"
 region       = "nyc1"
